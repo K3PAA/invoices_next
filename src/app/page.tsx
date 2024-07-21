@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className='mt-8 max-w-xl mx-auto'>
+    <main className='flex-1 flex justify-center'>
       <Button variant='destructive'>Delete</Button>
       <Button variant='default'>Mark as Paid</Button>
       <Button variant='secondary'>+ add new item </Button>
