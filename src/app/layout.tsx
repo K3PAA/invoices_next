@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import { cn } from "@/lib/utils";
 
 const league_Spartan = League_Spartan({ subsets: ["latin"] });
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "flex min-h-dvh flex-col border-2 border-red-400 md:flex-row",
+          "flex min-h-dvh flex-col md:flex-row",
           league_Spartan.className,
         )}
       >

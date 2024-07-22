@@ -1,4 +1,4 @@
-import Logo from "./Logo";
+import Logo from "@/components/Logo";
 import Avatar from "./Avatar";
 import ThemeButton from "./ThemeButton";
 
