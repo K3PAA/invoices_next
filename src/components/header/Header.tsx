@@ -1,6 +1,10 @@
 import Logo from "@/components/Logo";
 import Avatar from "./Avatar";
-import ThemeButton from "./ThemeButton";
+import dynamic from "next/dynamic";
+
+const DynamicThemeButton = dynamic(() => import("./ThemeButton"), {
+  ssr: false,
+});
 
 export default function Header() {
   return (
@@ -8,7 +12,7 @@ export default function Header() {
       <Logo className="rounded-r-[1.25rem]" />
 
       <div className="flex items-center gap-8 md:flex-col md:justify-center md:gap-0">
-        <ThemeButton />
+        <DynamicThemeButton />
         <div className="h-full w-[1px] bg-[#494E6E] md:mt-8 md:h-[1px] md:w-full"></div>
         <Avatar className="md:my-6" />
       </div>
