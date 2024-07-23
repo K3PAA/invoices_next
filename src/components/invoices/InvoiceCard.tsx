@@ -1,28 +1,12 @@
+const tailwindDynamicColors =
+  "bg-pending bg-draft bg-paid bg-pending/20 bg-draft/20 bg-paid/20 text-pending text-draft text-paid";
+
 import { capitalize, cn } from "@/lib/utils";
 import { Invoice } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
-type InvoicesDisplayProps = {
-  invoices: Invoice[];
-};
-
-const tailwindDynamicColors =
-  "bg-pending bg-draft bg-paid bg-pending/20 bg-draft/20 bg-paid/20 text-pending text-draft text-paid";
-
-export default function InvoicesDisplay({ invoices }: InvoicesDisplayProps) {
-  return (
-    <section className="mt-4 md:mt-12 md:max-h-[70dvh] md:overflow-y-auto">
-      <ul className="grid gap-4">
-        {invoices.map((invoice) => (
-          <InvoiceCard key={invoice.id} invoice={invoice} />
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-function InvoiceCard({ invoice }: { invoice: Invoice }) {
+export default function InvoiceCard({ invoice }: { invoice: Invoice }) {
   const paymentDue = new Date(invoice.paymentDue).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "short",
@@ -46,15 +30,15 @@ function InvoiceCard({ invoice }: { invoice: Invoice }) {
           </div>
         </div>
         <div className="mt-6 flex flex-[3_1_0%] items-center justify-between md:mt-0 md:justify-end">
-          <p className="mr-5 text-start font-bold md:flex-[0_0_80px] md:text-end lg:mr-10">
-            <span className="mb-2 block text-sm font-normal text-muted md:hidden">
+          <p className="mr-5 text-start text-xl font-bold md:flex-[0_0_90px] md:text-end md:text-[1rem] lg:mr-10 lg:flex-[0_0_100px] lg:text-xl">
+            <span className="block text-sm font-normal text-muted md:hidden">
               Due {paymentDue}
             </span>
             &#163; {invoice.total.toFixed(2)}
           </p>
           <div
             className={cn(
-              "flex w-[150px] items-center justify-center gap-2 rounded-[6px] py-3 md:mr-5 md:w-auto md:flex-1",
+              "flex w-[150px] items-center justify-center gap-2 rounded-[6px] py-3 md:mr-3 md:w-auto md:flex-1",
               `bg-${invoice.status}/20`,
             )}
           >
