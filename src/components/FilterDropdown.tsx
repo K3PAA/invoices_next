@@ -29,13 +29,14 @@ export default function FilterDropdown() {
             <ul className="grid min-w-[100px] gap-y-4 p-3 sm:min-w-[200px]">
               {filterOptions.map((option) => (
                 <li className="flex items-center space-x-2" key={option}>
-                  <Checkbox id={option} defaultChecked={filter[option]} />
+                  <Checkbox
+                    id={option}
+                    checked={filter[option]}
+                    onCheckedChange={() => handleFilterChange(option)}
+                  />
                   <Label
                     htmlFor={option}
                     className="w-full cursor-pointer p-4 text-[1.125rem] font-bold"
-                    onChange={() => {
-                      handleFilterChange(option);
-                    }}
                   >
                     {capitalize(option)}
                   </Label>
