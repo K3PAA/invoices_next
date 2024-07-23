@@ -73,11 +73,12 @@
     --destructive-700: 0 80% 63%;
     --destructive-foreground: 0 0% 100%;
 
-    --muted: 231 20% 61%;
+    --bluish: 231 73% 93%;
+    --muted: 231 73% 93%;
     --white: 0 0% 100%;
     --paid: 167 67% 52%;
     --pending: 34 100% 50%;
-    --draft: 231 20% 27%;
+    --draft: 231 73% 93%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
