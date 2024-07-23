@@ -37,3 +37,25 @@ export const getInvoicesByUser = async (userId: unknown) => {
 
   return invoices;
 };
+
+export const getFullInvoiceData = async (id: unknown) => {
+  if (typeof id !== "string") {
+    throw new Error("ID must be a string");
+  }
+
+  const invoice = await prisma.invoice.findUnique({
+    where: {
+      id,
+    },
+    include: {
+      items: true,
+      senderAddress: true,
+      clientAddress: true,
+    },
+  });
+  if (!invoice) {
+    throw new Error("Invoice not found");
+  }
+
+  return invoice;
+};

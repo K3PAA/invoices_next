@@ -1,10 +1,10 @@
 const tailwindDynamicColors =
   "bg-pending bg-draft bg-paid bg-pending/20 bg-draft/20 bg-paid/20 text-pending text-draft text-paid";
 
-import { capitalize, cn } from "@/lib/utils";
 import { Invoice } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
+import StatusBox from "../StatusBox";
 
 export default function InvoiceCard({ invoice }: { invoice: Invoice }) {
   const paymentDue = new Date(invoice.paymentDue).toLocaleDateString("en-GB", {
@@ -36,19 +36,10 @@ export default function InvoiceCard({ invoice }: { invoice: Invoice }) {
             </span>
             &#163; {invoice.total.toFixed(2)}
           </p>
-          <div
-            className={cn(
-              "flex w-[150px] items-center justify-center gap-2 rounded-[6px] py-3 md:mr-3 md:w-auto md:flex-1",
-              `bg-${invoice.status}/20`,
-            )}
-          >
-            <div
-              className={cn("h-2 w-2 rounded-full", `bg-${invoice.status}`)}
-            ></div>
-            <p className={cn("font-bold", `text-${invoice.status}`)}>
-              {capitalize(invoice.status)}
-            </p>
-          </div>
+          <StatusBox
+            status={invoice.status}
+            className="md:mr-3 md:w-auto md:flex-1"
+          />
           <Image
             src="/icon-arrow-right.svg"
             width={10}
