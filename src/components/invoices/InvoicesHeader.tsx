@@ -7,7 +7,9 @@ export default function InvoicesHeader() {
   return (
     <header className="mt-8 flex justify-between lg:mt-12">
       <div>
-        <h1 className="text-4xl font-bold text-foreground">Invoices</h1>
+        <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
+          Invoices
+        </h1>
         <InvoicesAmount />
       </div>
 
