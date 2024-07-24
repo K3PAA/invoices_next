@@ -17,7 +17,7 @@ export default async function Invoice({ params }: InvoiceProps) {
 
   return (
     <SingleInvoiceContextProvider invoice={invoice}>
-      <PageWrapper>
+      <PageWrapper className="overflow-auto">
         <BackButton />
         <ActionsBar />
         <ContentBlock />

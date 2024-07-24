@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header/Header";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Toaster } from "@/components/ui/sonner";
 
 const league_Spartan = League_Spartan({ subsets: ["latin"] });
 
@@ -33,6 +34,8 @@ export default function RootLayout({
         >
           <Header />
           {children}
+
+          <Toaster position="top-right" duration={2500} />
         </ThemeProvider>
       </body>
     </html>

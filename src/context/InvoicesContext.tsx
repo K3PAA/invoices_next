@@ -26,8 +26,8 @@ export default function InvoicesContextProvider({
   const amount = invoices.length;
 
   const [filter, setFilter] = useState<FilterOptions>({
-    pending: true,
-    paid: true,
+    pending: false,
+    paid: false,
     draft: false,
   });
 

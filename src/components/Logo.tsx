@@ -20,7 +20,7 @@ export default function Logo({ className }: LogoProps) {
         width={40}
         height={40}
         alt="logo"
-        className="relative z-[1000]"
+        className="relative z-[10]"
       />
     </Link>
   );

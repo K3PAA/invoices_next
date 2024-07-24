@@ -13,7 +13,9 @@ export default function InvoicesDisplay() {
         <ul className="grid gap-4">
           {invoices
             .filter((invoice) => {
-              if (invoice.status === "pending" && filter.pending) return true;
+              if (!filter.pending && !filter.paid && !filter.draft) return true;
+              else if (invoice.status === "pending" && filter.pending)
+                return true;
               else if (invoice.status === "paid" && filter.paid) return true;
               else if (invoice.status === "draft" && filter.draft) return true;
 
