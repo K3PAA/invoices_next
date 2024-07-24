@@ -52,6 +52,7 @@ const config = {
         paid: "hsl(var(--paid))",
         pending: "hsl(var(--pending))",
         draft: "hsl(var(--draft))",
+        dark: "hsl(var(--dark))",
 
         popover: {
           DEFAULT: "hsl(var(--popover))",
