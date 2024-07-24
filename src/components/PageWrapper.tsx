@@ -6,9 +6,14 @@ type PageWrapperProps = {
   children: React.ReactNode;
 };
 
-export default function PageWrapper({ children }: PageWrapperProps) {
+export default function PageWrapper({ children, className }: PageWrapperProps) {
   return (
-    <main className={cn("mx-auto my-8 w-full max-w-4xl flex-1 px-4 lg:my-10")}>
+    <main
+      className={cn(
+        "mx-auto flex w-full max-w-4xl flex-col px-4 py-4 md:max-h-[100dvh] lg:py-8",
+        className,
+      )}
+    >
       {children}
     </main>
   );

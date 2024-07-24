@@ -5,7 +5,7 @@ import InvoicesAmount from "./InvoicesAmount";
 
 export default function InvoicesHeader() {
   return (
-    <header className="mt-8 flex justify-between lg:mt-12">
+    <header className="flex justify-between">
       <div>
         <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
           Invoices

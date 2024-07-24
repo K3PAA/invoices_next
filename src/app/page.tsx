@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <InvoicesContextProvider invoices={userInvoices}>
-      <PageWrapper>
+      <PageWrapper className="gap-6 md:gap-8">
         <InvoicesHeader />
         <InvoicesDisplay />
       </PageWrapper>

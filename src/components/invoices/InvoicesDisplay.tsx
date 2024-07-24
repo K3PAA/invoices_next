@@ -8,7 +8,7 @@ export default function InvoicesDisplay() {
   const { invoices, amount, filter } = useInvoicesContext();
 
   return (
-    <section className="mt-4 md:mt-12 md:max-h-[70dvh] md:overflow-y-auto">
+    <section className="flex-1 overflow-auto">
       {amount > 0 ? (
         <ul className="grid gap-4">
           {invoices
